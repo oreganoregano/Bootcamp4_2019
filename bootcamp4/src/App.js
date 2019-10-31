@@ -27,11 +27,9 @@ class App extends React.Component {
       data: data
     });
   }
-  dataDelete(code) {
+  dataDelete(id) {
     var data = this.state.data;
-    var filteredArray = data.filter(
-      e => e.code.toLowerCase() !== code.toLowerCase()
-    );
+    var filteredArray = data.filter(e => e.id !== id);
     this.setState({ data: filteredArray });
   }
 
@@ -69,6 +67,7 @@ class App extends React.Component {
                     data={this.state.data}
                     filterText={this.state.filterText}
                     selectedUpdate={this.selectedUpdate.bind(this)}
+                    dataDelete={this.dataDelete.bind(this)}
                   />
                 </table>
               </div>
@@ -79,7 +78,6 @@ class App extends React.Component {
                 data={this.state.data}
               />
               <AddBuilding dataAdd={this.dataAdd.bind(this)} />
-              <RemoveBuilding dataDelete={this.dataDelete.bind(this)} />
             </div>
           </div>
           <Credit />

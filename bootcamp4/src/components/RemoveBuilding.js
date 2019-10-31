@@ -1,14 +1,15 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
 class RemoveBuilding extends React.Component {
-  handleSubmit = event => {
-    event.preventDefault();
-    this.props.dataDelete(this.code.value);
+  onClick = () => {
+    this.props.dataDelete(this.props.id);
   };
   render() {
     return (
-      <div>
-        <p>Enter the code of the entry you want to delete</p>
+      <td>
+        {/* <p>Enter the code of the entry you want to delete</p>
         <form onSubmit={this.handleSubmit}>
           <label>
             Code:
@@ -19,9 +20,19 @@ class RemoveBuilding extends React.Component {
               }}
             />
           </label>
-          <input type="submit" value="Submit" />
-        </form>
-      </div>
+          <input type="submit" value="Submit" /> */}
+        {/* </form> */}
+        <button
+          onClick={this.onClick}
+          style={{
+            backgroundColor: "transparent",
+            border: "none",
+            boxShadow: "none"
+          }}
+        >
+          <FontAwesomeIcon size="lg" icon={faTimesCircle} />
+        </button>
+      </td>
     );
   }
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import RemoveBuilding from "./RemoveBuilding";
 
 class BuilingList extends React.Component {
   showID(id) {
@@ -17,6 +18,10 @@ class BuilingList extends React.Component {
             {" "}
             {directory.name}{" "}
           </td>
+          <RemoveBuilding
+            dataDelete={this.props.dataDelete}
+            id={directory.id}
+          />
         </tr>
       );
     });
