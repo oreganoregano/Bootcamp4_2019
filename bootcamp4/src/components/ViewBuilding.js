@@ -1,5 +1,5 @@
 import React from "react";
-
+import Card from "react-bootstrap/Card";
 class ViewBuilding extends React.Component {
   render() {
     const target = this.props.data.find(
@@ -10,17 +10,21 @@ class ViewBuilding extends React.Component {
       target === undefined ? (
         <div></div>
       ) : (
-        <table>
-          <tbody>
-            <tr key={target.id}>
-              <td>{target.code} </td>
-              <td> {target.name} </td>
-              <td> {target.address}</td>
-              <td>{target.coordinates ? target.coordinates.latitude : ""}</td>
-              <td>{target.coordinates ? target.coordinates.longitude : ""}</td>
-            </tr>
-          </tbody>
-        </table>
+        <Card body>
+          <table>
+            <tbody>
+              <tr key={target.id}>
+                <td>{target.code} </td>
+                <td> {target.name} </td>
+                <td> {target.address}</td>
+                <td>{target.coordinates ? target.coordinates.latitude : ""}</td>
+                <td>
+                  {target.coordinates ? target.coordinates.longitude : ""}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </Card>
       );
     return (
       <div>

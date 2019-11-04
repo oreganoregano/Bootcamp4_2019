@@ -65,7 +65,9 @@ class AddBuilding extends React.Component {
               }}
             />
           </label>
-          <input type="submit" value="Submit" />
+          <label>
+            <input type="submit" value="Submit" />
+          </label>
         </form>
       </div>
     );
